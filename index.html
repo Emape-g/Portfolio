@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emanuel Perez | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/tu_codigo_real.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Emanuel Perez</h1>
+
+    <div>
+      <nav>
+        <ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="redes">
+        <a href="https://www.instagram.com" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero">
+    <h1>Hola, soy Emanuel 👨‍💻</h1>
+    <p>Construyendo ideas pixel a pixel. <br/> Web, lógica, datos y diseño.</p>
+    <a class="button-glow" href="#projects">Ver proyectos</a>
+  </section>
+
+  <section id="about" class="animated-section">
+    <h2>Sobre mí</h2>
+    <p>Soy Emanuel, un desarrollador web de 24 años, actualmente estudiante de la <strong>Tecnicatura Superior en Programación en la UTN</strong>. Tengo sólidos conocimientos en <strong>Java</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>Python</strong> y <strong>bases de datos relacionales</strong>.</p>
+    <p>Mi pasión por la <strong>lógica</strong> y la <strong>creación</strong> se extiende a mi tiempo libre, donde disfruto explorando el mundo de la <strong>música</strong> y los <strong>videojuegos</strong>. Siempre estoy buscando <strong>aprender</strong> y construir <strong>soluciones innovadoras</strong>.</p>
+  </section>
+
+  <section id="education" class="animated-section">
+    <h2>Educación y Cursos</h2>
+    <div class="education-item">
+      <h3>Tecnicatura Superior en Programación</h3>
+      <p>Universidad Tecnológica Nacional (UTN)</p>
+      <p><em>En curso</em></p>
+    </div>
+    <div class="education-item">
+      <h3>Diseño Web Responsivo (Responsive Web Design)</h3>
+      <p>FreeCodeCamp / Certificado: <a href="https://www.freecodecamp.org/certification/fccf22b5413-659c-4d86-b6ce-f1e7434aeb45/responsive-web-design" target="_blank">Ver certificado</a></p>
+      <p><em>Febrero 2025</em></p>
+      <p class="description">Dominio de fundamentos de HTML y CSS, CSS Flexbox y Grid, y aplicación de principios de diseño responsivo para diferentes dispositivos.</p>
+    </div>
+    </section>
+
+  <section id="projects" class="animated-section">
+    <h2>Proyectos</h2>
+    <div class="project-card">
+      <h3>Altodrop 🎧</h3>
+      <p>App web musical para descubrir lanzamientos y explorar artistas.</p>
+      <p><strong>Tecnologías:</strong> Python, Supabase, HTML</p>
+      <a href="#" class="btn-toggle">Ver proyecto</a>
+    </div>
+    <div class="project-card">
+      <h3>Alcaidiomas</h3>
+
+      <p class="summary">
+        Landing page para una academia de idiomas, que atrae y facilita inscripciones a futuros alumnos.
+      </p>
+
+      <div class="more-content">
+        <p>
+          Alcaidiomas ofrece información clara sobre los cursos disponibles, metodología y beneficios, con integración a Supabase para autenticación y almacenamiento de datos seguros.
+        </p>
+        <p><strong>Tecnologías utilizadas:</strong> HTML, CSS, JavaScript, Supabase, diseño responsive.</p>
+        <ul>
+          <li>Navegación sencilla y moderna.</li>
+          <li>Formulario de contacto con datos almacenados en Supabase.</li>
+          <li>Sistema de autenticación de usuarios con Supabase.</li>
+          <li>Diseño adaptable a cualquier pantalla.</li>
+          <li>Integración con redes sociales.</li>
+        </ul>
+        <p><strong>Objetivo:</strong> Crear una experiencia web atractiva y segura que facilite la comunicación con futuros alumnos.</p>
+        <p><a href="https://github.com/tu_usuario/alcaidiomas" target="_blank" class="repo-link">Ver repositorio</a></p>
+      </div>
+
+      <button id="toggle-alcaidiomas" class="btn-toggle">Ver más</button>
+    </div>
+
+    </section>
+
+  <section id="skills" class="animated-section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>JavaScript</li>
+      <li>HTML/CSS</li>
+      <li>React</li>
+      <li>Tailwind</li>
+      <li>Kivy</li>
+      <li>Supabase</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="animated-section">
+    <h2>Contacto</h2>
+    <p>¿Querés trabajar conmigo o ver más? Escribime: <a href="mailto:emanuel@example.com">emanuel@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Emanuel Perez</p>
+  </footer>
+
+  <a href="#" id="scroll-to-top" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+</body>
+<script>
+  // Script para el botón "Ver más/menos"
+  const toggleBtn = document.getElementById('toggle-alcaidiomas');
+  const moreContent = toggleBtn.previousElementSibling;
+
+  toggleBtn.addEventListener('click', () => {
+    if (moreContent.style.maxHeight && moreContent.style.maxHeight !== '0px') {
+      // Ocultar contenido
+      moreContent.style.maxHeight = '0';
+      toggleBtn.textContent = 'Ver más';
+    } else {
+      // Mostrar contenido
+      moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
+      toggleBtn.textContent = 'Ver menos';
+    }
+  });
+
+  // Asegurarse de que el contenido esté inicialmente oculto.
+  moreContent.style.maxHeight = '0';
+
+
+  // --- SCRIPT PARA ANIMACIONES DE SECCIONES ---
+  const animatedSections = document.querySelectorAll('.animated-section');
+
+  const observerOptions = {
+    root: null, // El viewport es el elemento raíz
+    rootMargin: '0px',
+    threshold: 0.1 // Porcentaje del elemento que debe estar visible para activar
+  };
+
+  const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Dejar de observar una vez que es visible
+      }
+    });
+  }, observerOptions);
+
+  animatedSections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+
+
+  // --- SCRIPT PARA BOTÓN VOLVER ARRIBA ---
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Evita el comportamiento por defecto del enlace
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Desplazamiento suave
+    });
+  });
+</script>
+</html>
