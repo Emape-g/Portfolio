@@ -2,141 +2,144 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio Emanuel 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Emanuel Perez</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="header" role="banner">
-    <div class="header__container">
-      <div class="header__logo" aria-label="Logo EP">EP</div>
-      <nav class="header__nav" role="navigation" aria-label="Menú principal">
-        <button class="header__nav-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú hamburguesa">
-          <span class="header__nav-toggle-icon"></span>
-        </button>
-        <ul class="header__nav-list" id="menu">
-          <li class="header__nav-item"><a href="#" class="header__nav-link">ENGLISH/ESPAÑOL</a></li>
-          <li class="header__nav-item"><a href="#inicio" class="header__nav-link">INICIO</a></li>
-          <li class="header__nav-item"><a href="#proyectos" class="header__nav-link">Proyectos</a></li>
-          <li class="header__nav-item"><a href="#sobre-mi" class="header__nav-link">SOBRE MÍ</a></li>
-          <li class="header__nav-item"><a href="#contacto" class="header__nav-link">CONTACTO</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <header class="header">
+  <div class="header__container container">
+    <a href="#inicio" class="header__logo-link">EP</a>
+    <nav class="header__nav nav">
+      <ul class="nav__list">
+        <li><a href="#inicio" class="nav__link">INICIO</a></li>
+        <li><a href="#proyectos" class="nav__link">PROYECTOS</a></li>
+        <li><a href="#sobre-mi" class="nav__link">SOBRE MÍ</a></li>
+        <li><a href="#educacion" class="nav__link">EDUCACIÓN</a></li>
+        <li><a href="#contacto" class="nav__link">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main>
-    <!-- Inicio -->
-    <section class="inicio section" id="inicio" tabindex="0" aria-label="Sección inicio">
-      <p class="inicio__greeting">Hola soy Emanuel,</p>
-      <p class="inicio__desc">
-        Apasionado por la<br />
-        Programación y el desarrollo<br />
-        en general, siempre buscando<br />
-        aprender más.
-      </p>
-      <a href="Emanuel_CV.pdf" class="inicio__btn" role="button" aria-label="Descargar CV de Emanuel" download>Descargar CV</a>
-    </section>
-
-    <!-- Sobre mí -->
-    <section class="sobre-mi section" id="sobre-mi" tabindex="0" aria-label="Sección sobre mí">
-      <h2 class="sobre-mi__title">Sobre mi</h2>
-      <article class="sobre-mi__card">
-        <p>
-          Soy Emanuel, estudiante de la Tecnicatura en Programación en la UTN.<br />
-          Me apasiona el desarrollo web y la creación de proyectos propios,<br />
-          explorando tecnologías como JavaScript, Python y bases de datos.<br />
-          Siempre busco aprender, mejorar y construir soluciones útiles.
+    <!-- HERO -->
+    <section id="inicio" class="hero section">
+      <div class="hero__content container">
+        <h1 class="hero__title">HOLA SOY EMANUEL</h1>
+        <p class="hero__description">
+          Apasionado por la Programación y el desarrollo en general,<br />
+          siempre buscando aprender más.
         </p>
-      </article>
+        <a href="assets/cv.pdf" class="btn btn--primary" download>DESCARGAR CV</a>
+      </div>
     </section>
 
-    <!-- Educación y Cursos -->
-    <section class="educacion section" id="educacion" tabindex="0" aria-label="Sección educación y cursos">
-      <h2 class="educacion__title">Educación y Cursos</h2>
-      <div class="educacion__timeline">
-        <div class="educacion__item">
-          <div class="educacion__dot" aria-hidden="true"></div>
-          <div class="educacion__content" tabindex="0">
-            <p>
-              Tecnicatura Superior en Programación<br />
-              Universidad Tecnológica Nacional (UTN)<br />
-              En curso
-            </p>
-          </div>
-        </div>
-        <div class="educacion__item">
-          <div class="educacion__dot" aria-hidden="true"></div>
-          <div class="educacion__content" tabindex="0">
-            <p>
-              Diseño Web Responsivo (Responsive Web Design)<br />
-              FreeCodeCamp / Certificado: <a href="#" class="educacion__link" target="_blank" rel="noopener noreferrer" aria-label="Ver certificado FreeCodeCamp">Ver certificado</a><br />
-              Febrero 2025
-            </p>
-          </div>
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="about section reveal">
+      <div class="container">
+        <h2 class="section__title">SOBRE MÍ</h2>
+        <div class="card about__card">
+          <p>
+            Soy Emanuel, estudiante de la <b>Tecnicatura en Programación en la UTN</b>.
+            Me apasiona el desarrollo web y la creación de proyectos propios, explorando
+            tecnologías como JavaScript, Python y bases de datos. Siempre busco aprender,
+            mejorar y construir soluciones útiles.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Proyectos -->
-    <section class="proyectos section" id="proyectos" tabindex="0" aria-label="Sección proyectos">
-      <h2 class="proyectos__title">Proyectos</h2>
-      <div class="proyectos__grid">
-        <article class="proyecto-card">
-          <h3 class="proyecto-card__title">Alcaidiomas</h3>
-          <p class="proyecto-card__desc">
-            Landing page para una academia de idiomas con diseño responsive y navegación moderna. Incluye autenticación y almacenamiento seguro con Supabase, además de formulario de contacto e integración con redes sociales.
-          </p>
-          <ul class="proyecto-card__stack stack-list" aria-label="Tecnologías usadas en Alcaidiomas">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Supabase</li>
-          </ul>
-          <a href="https://github.com/emanuel/alcaidiomas" class="proyecto-card__link" target="_blank" rel="noopener noreferrer" aria-label="Repositorio de Alcaidiomas en GitHub">Repo Github</a>
-        </article>
-        <article class="proyecto-card">
-          <h3 class="proyecto-card__title">Base de Datos Biblioteca</h3>
-          <p class="proyecto-card__desc">
-            Modelo relacional para administrar libros, autores, usuarios y préstamos. Permite registrar nuevas adquisiciones, controlar disponibilidad y gestionar devoluciones de forma organizada.
-          </p>
-          <p class="proyecto-card__stack-desc">Stack: SQL · Diseño Relacional</p>
-          <a href="https://github.com/emanuel/base-datos-biblioteca" class="proyecto-card__link" target="_blank" rel="noopener noreferrer" aria-label="Repositorio de Base de Datos Biblioteca en GitHub">Repo Github</a>
-        </article>
+    <!-- EDUCACIÓN -->
+    <section id="educacion" class="education section reveal">
+      <div class="container">
+        <h2 class="section__title">EDUCACIÓN Y CURSOS</h2>
+        <div class="timeline-container">
+          <article class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card card">
+              <h3>TECNICATURA SUPERIOR EN PROGRAMACIÓN</h3>
+              <p class="timeline__meta">Universidad Tecnológica Nacional (UTN)</p>
+              <p class="timeline__status">En curso</p>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card card">
+              <h3>DISEÑO WEB RESPONSIVO (RESPONSIVE WEB DESIGN)</h3>
+              <p class="timeline__meta">FreeCodeCamp / Certificado: Ver certificado</p>
+              <p class="timeline__status">Febrero 2025</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Contacto -->
-    <section class="contacto section" id="contacto" tabindex="0" aria-label="Sección contacto">
-      <h2 class="contacto__title">Contacto</h2>
-      <form class="contacto__form" aria-label="Formulario de contacto">
-        <label for="nombre" class="contacto__label">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" class="contacto__input" required aria-required="true" />
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="projects section reveal">
+      <div class="container">
+        <h2 class="section__title">PROYECTOS / TRABAJOS</h2>
+        <div class="projects__grid">
+          <article class="project-card card">
+            <h3>ALCAIDIOMAS</h3>
+            <p>
+              Landing page para una academia de idiomas con diseño responsive y navegación moderna.
+              Incluye autenticación y almacenamiento seguro con Supabase.
+            </p>
+            <ul class="stack-list">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li>
+            </ul>
+            <a href="#" class="btn btn--secondary">REPO GITHUB</a>
+          </article>
 
-        <label for="email" class="contacto__label">Email:</label>
-        <input type="email" id="email" name="email" class="contacto__input" required aria-required="true" />
+          <article class="project-card card">
+            <h3>BASE DE DATOS BIBLIOTECA</h3>
+            <p>
+              Modelo relacional para administrar libros, autores, usuarios y préstamos.
+              Permite registrar nuevas adquisiciones y gestionar devoluciones de forma organizada.
+            </p>
+            <ul class="stack-list">
+              <li>SQL</li><li>Diseño Relacional</li>
+            </ul>
+            <a href="#" class="btn btn--secondary">REPO GITHUB</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <label for="mensaje" class="contacto__label">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" class="contacto__textarea" required aria-required="true"></textarea>
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact section reveal">
+      <div class="container">
+        <h2 class="section__title">CONTACTO</h2>
+        <div class="contact__card card">
+          <form action="#" method="POST" class="contact__form">
+            <label>Nombre:</label>
+            <input type="text" required>
+            <label>Email:</label>
+            <input type="email" required>
+            <label>Mensaje:</label>
+            <textarea rows="4" required></textarea>
+            <button type="submit" class="btn btn--primary">ENVIAR</button>
+          </form>
+        </div>
 
-        <button type="submit" class="contacto__btn" aria-label="Enviar mensaje">Enviar</button>
-      </form>
-      <div class="contacto__social" aria-label="Enlaces a redes sociales">
-        <a href="https://github.com/emanuel" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Emanuel" class="contacto__social-link">
-          <img src="icons/github.svg" alt="GitHub" />
-        </a>
-        <a href="https://linkedin.com/in/emanuel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Emanuel" class="contacto__social-link">
-          <img src="icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <a href="https://instagram.com/emanuel" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Emanuel" class="contacto__social-link">
-          <img src="icons/instagram.svg" alt="Instagram" />
-        </a>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
+
+
 
