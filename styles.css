@@ -16,59 +16,67 @@ body {
   color: var(--color-text-title);
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  padding-top: 70px; /* espacio para header fijo */
+  padding-top: 70px;
 }
 
 h1, h2, h3, .btn, .header__logo-link {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.section {
-  padding: 80px 0;
-}
-
+/* ===== HEADER ===== */
+/* ===== HEADER / NAVBAR ===== */
 /* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: var(--color-bg-header);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  height: 70px;
+  background: rgba(29, 45, 68, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
   z-index: 1000;
 }
 
 .header__container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 🔹 EP izquierda, nav derecha */
   align-items: center;
-  padding: 10px 5%;
+  width: 100%;
+  padding: 0 5%;
 }
 
 .header__logo-link {
   color: var(--color-text-title);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-family: 'Orbitron';
+  letter-spacing: 1px;
+}
+
+/* 🔹 NAVBAR DERECHA */
+.header__nav {
+  margin-left: auto; /* empuja la nav a la derecha */
 }
 
 .nav__list {
   display: flex;
   list-style: none;
+  gap: 30px;
   margin: 0;
   padding: 0;
+  justify-content: flex-end;
 }
 
 .nav__link {
   color: var(--color-text-title);
   text-decoration: none;
-  margin-left: 20px;
   font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 
@@ -76,23 +84,32 @@ h1, h2, h3, .btn, .header__logo-link {
   color: var(--color-btn-main);
 }
 
-/* ===== HERO (Inicio) ===== */
+
+/* ===== HERO ===== */
+.hero {
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+
 .hero__content {
+  padding-left: 5%;
+  max-width: 600px;
   text-align: left;
-  padding-top: 60px;
-  padding-left: 12px; /* 🔹 antes 24px → ahora más cerca del borde */
 }
 
 .hero__title {
-  font-size: 2.8rem;
-  margin-bottom: 14px;
+  font-size: 3.6rem;
+  margin-bottom: 20px;
+  color: var(--color-text-title);
+  letter-spacing: 2px;
 }
 
 .hero__description {
   color: var(--color-text-desc);
   font-size: 1.1rem;
-  margin: 0 0 22px 0;
-  max-width: 460px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
 .btn {
@@ -116,104 +133,216 @@ h1, h2, h3, .btn, .header__logo-link {
   background-color: var(--color-btn-hover);
 }
 
-.btn--secondary {
-  border: 1px solid var(--color-btn-main);
-  background: transparent;
-  color: var(--color-text-title);
+/* ===== SECCIONES ===== */
+.section {
+  padding: 100px 0;
 }
 
-.btn--secondary:hover {
-  background: var(--color-btn-main);
-}
-
-/* ===== TITULOS DE SECCIÓN ===== */
 .section__title {
   text-align: left;
-  margin-left: 12px; /* 🔹 igualamos el desplazamiento */
-  font-size: 2rem;
-  margin-bottom: 40px;
+  margin-left: 5%;
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  position: relative;
 }
 
-/* ===== CARD ===== */
-.card {
-  background: var(--color-bg-header);
-  border: 1px solid var(--color-text-desc);
-  border-radius: var(--radius-xl);
-  padding: 30px;
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-text-title), transparent);
+  border-radius: 3px;
+  opacity: 0.8;
 }
 
 /* ===== SOBRE MÍ ===== */
 .about__card {
-  max-width: 720px;
-  margin: 0 0 0 12px; /* 🔹 más pegado */
+  background: var(--color-bg-header);
+  border: 1px solid var(--color-text-desc);
+  border-radius: var(--radius-xl);
+  padding: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  color: var(--color-text-desc);
+  font-size: 1.25rem; /* 🔹 texto más grande */
+  line-height: 1.8;   /* 🔹 más aire entre líneas */
 }
 
-
-/* ===== EDUCACIÓN (Timeline) ===== */
+/* ===== EDUCACIÓN Y CURSOS ===== */
 .timeline-container {
   position: relative;
-  padding-left: 12px; /* 🔹 misma distancia que el Hero */
+  padding-left: 11%; /* 🔹 acomoda la línea y los puntos */
+  padding-right: 7%; /* 🔹 margen derecho equilibrado */
 }
 
+/* 🔹 Línea vertical más centrada visualmente */
 .timeline-container::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 8px; /* 🔹 más adentro */
+  left: 9%; /* 🔹 posición ajustada de la línea */
   width: 2px;
   height: 100%;
   background: var(--color-text-desc);
+  z-index: 1;
 }
 
+/* 🔹 Ítem del timeline */
+.timeline__item {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* 🔹 Punto rojo con separación natural de la línea */
 .timeline__dot {
   position: absolute;
-  top: 20px;
-  left: 0; /* 🔹 alineado con la línea */
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(9% + 14px); /* 🔹 un poco más separado para estética */
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background: var(--color-dot-accent);
   border: 4px solid var(--color-bg-main);
+  z-index: 2;
 }
 
+/* 🔹 Tarjeta: alineada y con ancho controlado */
 .timeline__card {
-  margin-left: 12px;
+  margin-left: 13.5%; /* 🔹 acompaña la posición de los puntos */
+  background: var(--color-bg-header);
+  border: 1px solid var(--color-text-desc);
+  border-radius: var(--radius-xl);
+  padding: 30px 60px;
+  width: 80%; /* 🔹 ahora deja margen visual a la derecha */
+  color: var(--color-text-desc);
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(116, 140, 171, 0.15);
 }
 
-.timeline__meta, .timeline__status {
-  color: var(--color-text-title);
+/* 🔹 Título dentro de las tarjetas */
+.timeline__card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
+
+
+
+
+
+
 
 /* ===== PROYECTOS ===== */
 .projects__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 90px; /* 🔹 Más separación entre las cards */
+  margin-top: 60px; /* 🔹 Mayor espacio superior */
 }
 
+/* 🔹 Card de proyecto */
+.project-card {
+  background: var(--color-bg-header);
+  border: 1px solid var(--color-text-desc);
+  border-radius: var(--radius-xl);
+  padding: 40px 45px; /* 🔹 Más aire interior */
+  width: 420px; /* 🔹 Más ancha */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(116, 140, 171, 0.25);
+}
+
+/* 🔹 Títulos */
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--color-text-title);
+}
+
+/* 🔹 Texto */
+.project-card p {
+  font-size: 1rem;
+  color: var(--color-text-desc);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Lista de tecnologías */
 .stack-list {
   list-style: none;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   padding: 0;
-  margin: 15px 0;
+  margin-bottom: 30px;
 }
 
 .stack-list li {
-  background: rgba(116, 140, 171, 0.2);
-  padding: 6px 10px;
-  border-radius: 6px;
+  background: rgba(116, 140, 171, 0.15);
+  padding: 8px 14px;
+  border-radius: 8px;
   color: var(--color-text-desc);
+  font-size: 0.95rem;
 }
+
+/* 🔹 Contenedor del botón */
+.project-card + .btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* 🔹 Botón “Repo GitHub” */
+.btn--secondary {
+  background: #003e9c;
+  border: 1px solid #0066ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn--secondary:hover {
+  background: #0059ff;
+  transform: scale(1.07);
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+}
+
 
 /* ===== CONTACTO ===== */
-.contact__card {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
+.contact {
+  margin-top: 100px;
+  text-align: center;
 }
 
+.contact__card {
+  max-width: 500px;
+  margin: 40px auto 0;
+  background: var(--color-bg-header);
+  border: 1px solid var(--color-text-desc);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(116, 140, 171, 0.15);
+}
+
+/* 🔹 Campos del formulario */
 .contact__form input,
 .contact__form textarea {
   width: 100%;
@@ -224,6 +353,7 @@ h1, h2, h3, .btn, .header__logo-link {
   padding: 10px;
   margin-bottom: 15px;
   font-family: 'Roboto';
+  font-size: 0.95rem;
 }
 
 .contact__form input:focus,
@@ -231,10 +361,23 @@ h1, h2, h3, .btn, .header__logo-link {
   outline: 1px solid var(--color-btn-main);
 }
 
+/* 🔹 Botón enviar */
 .contact__form .btn--primary {
   width: 100%;
+  background: #004fff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+.contact__form .btn--primary:hover {
+  background: #005fff;
+}
+
+/* 🔹 Redes sociales */
 .social-links {
   display: flex;
   justify-content: center;
@@ -243,56 +386,53 @@ h1, h2, h3, .btn, .header__logo-link {
 }
 
 .social-links i {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   transition: transform 0.3s ease;
 }
 
-.social-links a:nth-child(1) i { color: #6e5494; }
-.social-links a:nth-child(2) i { color: #0077b5; }
-.social-links a:nth-child(3) i { color: #c13584; }
+.social-links a:nth-child(1) i { color: #6e5494; } /* GitHub */
+.social-links a:nth-child(2) i { color: #0077b5; } /* LinkedIn */
+.social-links a:nth-child(3) i { color: #c13584; } /* Instagram */
 
-.social-links i:hover { transform: scale(1.2); }
-
-/* ===== REVEAL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
+.social-links i:hover {
+  transform: scale(1.25);
 }
 
-.reveal--visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header__container {
+  .header {
     flex-direction: column;
     align-items: flex-start;
+    height: auto;
+    padding: 10px 5%;
   }
 
   .nav__list {
     flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
     margin-top: 10px;
   }
 
-  .hero__content,
-  .section__title,
-  .about__card,
-  .timeline-container,
-  .timeline__card {
-    padding-left: 0;
-    margin-left: 0;
+  .hero__content {
+    padding-left: 5%;
+  }
+
+  .section__title {
+    margin-left: 5%;
     text-align: left;
   }
 
+  .about__card,
+  .timeline-container,
+  .timeline__card,
   .projects__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 50px 0;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
+
+
+
 
