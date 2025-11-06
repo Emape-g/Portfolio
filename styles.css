@@ -1,4 +1,3 @@
-/* Variables CSS - Paleta de colores */
 :root {
   --color-bg-main: #0D1321;
   --color-bg-header: #1D2D44;
@@ -9,24 +8,32 @@
   --color-dot-accent: #C1121F;
 }
 
-/* Tipografías */
-body {
+/* Reset y base */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
   background-color: var(--color-bg-main);
-  color: var(--color-text-desc);
   font-family: 'Roboto', sans-serif;
+  color: var(--color-text-desc);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease;
 }
 
-h1, h2, h3, .inicio__btn, .proyecto-card__link {
+/* Títulos y botones - Orbitron */
+h1, h2, h3, a, button, .header__nav-link {
   font-family: 'Orbitron', sans-serif;
   color: var(--color-text-title);
-  margin: 0;
+  font-weight: 400;
 }
 
+/* Links */
 a {
   text-decoration: none;
   color: var(--color-text-title);
@@ -42,13 +49,17 @@ a:focus, button:focus, input:focus, textarea:focus {
   position: sticky;
   top: 0;
   background-color: var(--color-bg-header);
-  padding: 0.5rem 1rem;
-  z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-btn-main);
+  user-select: none;
 }
 
 .header__container {
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -56,9 +67,8 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 .header__logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--color-text-title);
+  font-size: 1.3rem;
+  cursor: default;
   user-select: none;
 }
 
@@ -68,28 +78,27 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 .header__nav-list {
   display: flex;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1.5rem;
+  font-size: 1rem;
 }
 
-.header__nav-item {}
-
 .header__nav-link {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
-  color: var(--color-text-title);
+  cursor: pointer;
+  transition: color 0.3s;
   text-transform: uppercase;
-  padding: 0.25rem 0;
-  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
 }
 
 .header__nav-link:hover,
 .header__nav-link:focus {
   color: var(--color-btn-hover);
+  outline: none;
 }
 
+/* Menú hamburguesa oculto desktop */
 .header__nav-toggle {
   display: none;
   background: none;
@@ -125,14 +134,21 @@ a:focus, button:focus, input:focus, textarea:focus {
   top: 8px;
 }
 
-/* Main sections common styles */
+/* Main container */
+main {
+  max-width: 1024px;
+  margin: 3rem auto 5rem auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Secciones */
 .section {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+  margin-bottom: 4rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  text-align: left;
 }
 
 .section--visible {
@@ -140,291 +156,307 @@ a:focus, button:focus, input:focus, textarea:focus {
   transform: translateY(0);
 }
 
-/* Inicio */
-.inicio__title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* INICIO */
+.inicio__greeting {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-title);
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 .inicio__desc {
-  white-space: pre-wrap;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: var(--color-text-desc);
+  max-width: 380px;
+  white-space: pre-line;
+  margin-bottom: 2.5rem;
 }
 
 .inicio__btn {
-  display: inline-block;
   background-color: var(--color-btn-main);
   color: var(--color-text-title);
-  padding: 0.5rem 1.5rem;
-  border-radius: 3px;
   font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.35rem 1.3rem;
+  border-radius: 0.3rem;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  user-select: none;
+  transition: background-color 0.3s;
+  text-transform: none;
+  display: inline-block;
 }
 
 .inicio__btn:hover,
 .inicio__btn:focus {
   background-color: var(--color-btn-hover);
+  outline: none;
 }
 
-/* Sobre mi */
+/* SOBRE MI */
 .sobre-mi__title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-title);
 }
 
 .sobre-mi__card {
-  background-color: var(--color-bg-header);
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  font-size: 1rem;
+  max-width: 600px;
+  background: rgba(29, 45, 68, 0.9);
+  border-radius: 2rem;
+  padding: 2rem 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--color-text-desc);
-  line-height: 1.4;
 }
 
-/* Educación y cursos - Timeline vertical */
+/* EDUCACIÓN Y CURSOS */
 .educacion__title {
-  font-size: 1.8rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
+  color: var(--color-text-title);
 }
 
 .educacion__timeline {
+  max-width: 680px;
+  border-left: 2px solid var(--color-text-desc);
+  padding-left: 3rem;
   position: relative;
-  margin-left: 20px;
-}
-
-.educacion__timeline::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--color-text-desc);
-  border-radius: 2px;
 }
 
 .educacion__item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  align-items: flex-start;
+  position: relative;
+  margin-bottom: 3.5rem;
 }
 
 .educacion__dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: -13px;
+  width: 20px;
+  height: 20px;
   background-color: var(--color-dot-accent);
-  flex-shrink: 0;
-  margin-top: 4px;
   border: 2px solid var(--color-text-desc);
+  border-radius: 50%;
 }
 
 .educacion__content {
-  background-color: var(--color-bg-header);
-  padding: 1rem 1.5rem;
-  border-radius: 1.5rem;
+  background: rgba(29, 45, 68, 0.9);
+  border-radius: 2rem;
+  padding: 1.3rem 2rem;
   font-size: 1rem;
+  line-height: 1.4;
   color: var(--color-text-desc);
-  max-width: 600px;
+  white-space: pre-line;
 }
 
 .educacion__link {
   color: var(--color-btn-main);
-  font-weight: 600;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .educacion__link:hover,
 .educacion__link:focus {
   color: var(--color-btn-hover);
-  text-decoration: underline;
+  outline: none;
 }
 
-/* Proyectos - Grid de tarjetas */
+/* PROYECTOS */
 .proyectos__title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-title);
 }
 
 .proyectos__grid {
+  max-width: 900px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 4rem;
 }
 
 .proyecto-card {
-  background-color: var(--color-bg-header);
-  padding: 1rem 1.5rem;
-  border-radius: 1.5rem;
+  background: rgba(29, 45, 68, 0.9);
+  border-radius: 2rem;
+  padding: 2.5rem 2rem;
+  font-size: 1rem;
   color: var(--color-text-desc);
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px;
+  line-height: 1.5;
 }
 
 .proyecto-card__title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.2rem;
-  color: var(--color-text-title);
+  font-weight: 400;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
+  color: var(--color-text-title);
 }
 
 .proyecto-card__desc {
-  flex-grow: 1;
-  font-size: 0.95rem;
   margin-bottom: 1rem;
+  white-space: pre-wrap;
 }
 
 .stack-list {
   list-style: none;
   padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
   font-size: 0.85rem;
   color: var(--color-text-desc);
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.5rem;
+  line-height: 1.3;
 }
 
 .stack-list li {
-  background-color: var(--color-btn-main);
-  color: var(--color-text-title);
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
+  background-color: var(--color-bg-header);
+  padding: 2px 12px;
+  border-radius: 6px;
+  font-weight: 300;
 }
 
-.proyecto-card__stack-desc {
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-desc);
-  font-style: italic;
-}
-
-/* Botón enlace proyecto */
 .proyecto-card__link {
   align-self: flex-start;
-  font-family: 'Orbitron', sans-serif;
-  background-color: var(--color-btn-main);
+  background: var(--color-btn-main);
   color: var(--color-text-title);
-  padding: 0.5rem 1.25rem;
-  border-radius: 3px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.4rem 2.1rem;
+  border-radius: 0.3rem;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-align: center;
   user-select: none;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin-top: auto;
 }
 
 .proyecto-card__link:hover,
 .proyecto-card__link:focus {
   background-color: var(--color-btn-hover);
+  outline: none;
 }
 
-/* Contacto */
+/* CONTACTO */
 .contacto__title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
   color: var(--color-text-title);
+  text-align: center;
 }
 
 .contacto__form {
-  background-color: var(--color-bg-header);
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  max-width: 400px;
-  margin-bottom: 1.5rem;
+  max-width: 350px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem 3rem;
+  background: rgba(29, 45, 68, 0.95);
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
 }
 
 .contacto__label {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
   font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
   color: var(--color-text-title);
 }
 
 .contacto__input,
 .contacto__textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 6px;
+  background: #d1d1d1;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.8rem;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  font-family: 'Roboto', sans-serif;
   resize: vertical;
+  color: #000;
 }
 
-.contacto__input:focus,
-.contacto__textarea:focus {
-  outline: 2px solid var(--color-btn-main);
+.contacto__textarea {
+  min-height: 90px;
 }
 
 .contacto__btn {
   background-color: var(--color-btn-main);
-  border: none;
   color: var(--color-text-title);
   font-family: 'Orbitron', sans-serif;
-  padding: 0.5rem 1.5rem;
-  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem 3rem;
+  border-radius: 0.3rem;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   user-select: none;
+  transition: background-color 0.3s;
+  align-self: center;
 }
 
 .contacto__btn:hover,
 .contacto__btn:focus {
   background-color: var(--color-btn-hover);
+  outline: none;
 }
 
 /* Redes sociales */
 .contacto__social {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  max-width: 400px;
+  gap: 2rem;
+  max-width: 350px;
   margin: 0 auto 3rem auto;
 }
 
 .contacto__social-link img {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
+  cursor: pointer;
+  transition: filter 0.3s;
 }
 
 .contacto__social-link:hover img,
 .contacto__social-link:focus img {
   filter: brightness(0) saturate(100%) hue-rotate(290deg) brightness(1);
-  /* Morado hover */
+  outline: none;
 }
 
-/* Animación fade-in y translate se activa en JS agregando clase */
+/* Animación fade-in */
 .fade-in {
   opacity: 1 !important;
   transform: translateY(0) !important;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Responsividad */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  .header__container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
   .header__nav-list {
     flex-direction: column;
     background-color: var(--color-bg-header);
     position: absolute;
-    top: 100%;
+    top: 60px;
     right: 0;
-    width: 200px;
+    width: 180px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     border-radius: 0 0 0 12px;
-    overflow: hidden;
-    z-index: 998;
+    z-index: 9999;
   }
 
   .header__nav-list--active {
@@ -432,7 +464,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 
   .header__nav-item {
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 1rem;
   }
 
   .header__nav-toggle {
@@ -444,6 +476,16 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 
   .educacion__timeline {
-    margin-left: 10px;
+    max-width: 100%;
+    padding-left: 1.75rem;
+  }
+
+  .sobre-mi__card {
+    max-width: 100%;
+  }
+
+  .contacto__form {
+    max-width: 90vw;
+    padding: 1.5rem 2rem;
   }
 }
