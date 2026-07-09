@@ -1,5 +1,15 @@
 // Inicializar EmailJS
-emailjs.init("TU_PUBLIC_KEY"); // Reemplazar con tu Public Key
+if (window.emailjs) {
+  emailjs.init("TU_PUBLIC_KEY"); // Reemplazar con tu Public Key
+}
+
+// ===== HEADER AL HACER SCROLL =====
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.style.boxShadow = window.scrollY > 20
+    ? '0 8px 30px rgba(0, 0, 0, 0.35)'
+    : 'none';
+});
 
 // ===== ANIMACIÓN REVEAL =====
 const revealElements = document.querySelectorAll('.reveal');
@@ -26,6 +36,30 @@ toggleBtn.addEventListener('click', () => {
 // Cerrar menú al hacer clic en un link
 navLinks.forEach(link => {
   link.addEventListener('click', () => nav.classList.remove('active'));
+});
+
+// ===== FILTRO DE PROYECTOS =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+const emptyMsg = document.querySelector('.projects__empty');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+
+    const filter = btn.dataset.filter;
+    let visibles = 0;
+
+    projectCards.forEach(card => {
+      const tags = (card.dataset.tags || '').split(' ');
+      const match = filter === 'all' || tags.includes(filter);
+      card.classList.toggle('is-hidden', !match);
+      if (match) visibles++;
+    });
+
+    if (emptyMsg) emptyMsg.hidden = visibles !== 0;
+  });
 });
 
 // ===== FORMULARIO DE CONTACTO =====

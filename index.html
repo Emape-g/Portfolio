@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Emanuel Perez</title>
+  <title>Emanuel Perez · Desarrollador Web</title>
+  <meta name="description" content="Portfolio de Emanuel Perez, desarrollador web y estudiante de la Tecnicatura en Programación (UTN). Proyectos en JavaScript, Python y bases de datos." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emanuel Perez · Desarrollador Web" />
+  <meta property="og:description" content="Portfolio de proyectos web, JavaScript, Python y bases de datos." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C5CFF'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='52' font-weight='bold' fill='white' text-anchor='middle'%3EEP%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -22,6 +33,7 @@
         <ul class="nav__list">
           <li><a href="#inicio" class="nav__link">Inicio</a></li>
           <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
           <li><a href="#educacion" class="nav__link">Educación</a></li>
           <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
           <li><a href="#contacto" class="nav__link">Contacto</a></li>
@@ -30,68 +42,187 @@
     </div>
   </header>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
   <main>
-    <!-- HERO -->
-    <section id="inicio" class="hero section">
-      <div class="hero__content container">
-        <h1 class="hero__title">HOLA SOY EMANUEL</h1>
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+      <div class="hero__content">
+        <span class="hero__badge"><span class="dot"></span> Disponible para trabajar</span>
+        <h1 class="hero__title">Hola, soy <span class="gradient-text">Emanuel Perez</span></h1>
         <p class="hero__description">
-          Apasionado por la Programación y el desarrollo en general,<br />
-          siempre buscando aprender más.
+          Desarrollador web y estudiante de la Tecnicatura en Programación.
+          Apasionado por crear soluciones útiles y aprender algo nuevo todos los días.
         </p>
-        <a href="assets/cv.pdf" class="btn btn--primary" download>Descargar CV</a>
+        <div class="hero__actions">
+          <a href="CV_Emanuel_Perez.pdf" class="btn btn--primary" download>
+            <i class="fas fa-download"></i> Descargar CV
+          </a>
+          <a href="#proyectos" class="btn btn--ghost">
+            Ver proyectos <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="about section reveal">
-      <div class="container">
-        <h2 class="section__title">SOBRE MÍ</h2>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="section reveal">
+      <div class="section__header">
+        <span class="section__eyebrow">Quién soy</span>
+        <h2 class="section__title">Sobre mí</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="about__grid">
         <div class="card about__card">
           <p>
-            Soy Emanuel, estudiante de la <b>Tecnicatura en Programación en la UTN</b>.
+            Soy Emanuel, estudiante de la <b>Tecnicatura Superior en Programación en la UTN</b>.
             Me apasiona el desarrollo web y la creación de proyectos propios, explorando
-            tecnologías como JavaScript, Python y bases de datos. Siempre busco aprender,
+            tecnologías como <b>JavaScript, Python y bases de datos</b>. Siempre busco aprender,
             mejorar y construir soluciones útiles.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- EDUCACIÓN -->
-    <section id="educacion" class="education section reveal">
-      <div class="container">
-        <h2 class="section__title">EDUCACIÓN Y CURSOS</h2>
-        <div class="timeline-container">
-          <article class="timeline__item">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card card">
-              <h3>TECNICATURA SUPERIOR EN PROGRAMACIÓN</h3>
-              <p class="timeline__meta">Universidad Tecnológica Nacional (UTN)</p>
-              <p class="timeline__status">En curso</p>
-            </div>
-          </article>
-
-          <article class="timeline__item">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card card">
-              <h3>DISEÑO WEB RESPONSIVO</h3>
-              <p class="timeline__meta">FreeCodeCamp / Certificado: Ver certificado</p>
-              <p class="timeline__status">Febrero 2025</p>
-            </div>
-          </article>
-        </div>
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section reveal">
+      <div class="section__header">
+        <span class="section__eyebrow">Tecnologías</span>
+        <h2 class="section__title">Skills &amp; herramientas</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="skills__grid">
+        <div class="skill"><i class="fab fa-html5"></i> HTML5</div>
+        <div class="skill"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill"><i class="fas fa-code"></i> TypeScript</div>
+        <div class="skill"><i class="fab fa-react"></i> React</div>
+        <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fas fa-server"></i> FastAPI</div>
+        <div class="skill"><i class="fas fa-database"></i> SQL</div>
+        <div class="skill"><i class="fas fa-bolt"></i> Supabase</div>
+        <div class="skill"><i class="fab fa-git-alt"></i> Git</div>
+        <div class="skill"><i class="fab fa-github"></i> GitHub</div>
       </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="projects section reveal">
-      <div class="container">
-        <h2 class="section__title">PROYECTOS / TRABAJOS</h2>
-        <div class="projects__grid">
-          <article class="project-card card">
-            <h3>ALCAIDIOMAS</h3>
+    <!-- ===== EDUCACIÓN ===== -->
+    <section id="educacion" class="section reveal">
+      <div class="section__header">
+        <span class="section__eyebrow">Formación</span>
+        <h2 class="section__title">Educación y cursos</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="timeline-container">
+        <article class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="card timeline__card">
+            <h3>Tecnicatura Superior en Programación</h3>
+            <p class="timeline__meta">Universidad Tecnológica Nacional (UTN)</p>
+            <span class="timeline__status">En curso</span>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="card timeline__card">
+            <h3>Diseño Web Responsivo</h3>
+            <p class="timeline__meta">FreeCodeCamp · Certificado</p>
+            <span class="timeline__status">Febrero 2025</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="section reveal">
+      <div class="section__header">
+        <span class="section__eyebrow">Mi trabajo</span>
+        <h2 class="section__title">Proyectos destacados</h2>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Filtros por tecnología -->
+      <div class="projects__filters" role="tablist" aria-label="Filtrar proyectos por tecnología">
+        <button class="filter-btn is-active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="sql">SQL</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+
+      <div class="projects__grid">
+        <!-- DESTACADO: Reps -->
+        <article class="card project-card project-card--featured" data-tags="javascript web">
+          <div class="project-card__preview">
+            <i class="fas fa-dumbbell"></i>
+            <div class="project-card__badges">
+              <span class="project-card__status project-card__status--live">● En vivo</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3>Reps — Workout Tracker con IA</h3>
+            <p>
+              Tracker de entrenamiento full-stack que no solo registra tus series: las entiende.
+              Con Groq + Llama 3.3 analiza tu volumen semanal y el balance muscular, y sugiere
+              mejoras concretas a tu rutina con un toque. Incluye creador de rutinas con
+              drag-and-drop, sesión activa y gráficos de progreso.
+            </p>
+            <ul class="stack-list">
+              <li>React</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>Groq / Llama 3.3</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="https://reps-henna.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+                <i class="fas fa-arrow-up-right-from-square"></i> Demo en vivo
+              </a>
+              <a href="https://github.com/Emape-g/reps" target="_blank" rel="noopener noreferrer" class="btn btn--repo">
+                <i class="fab fa-github"></i> Repo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Food Store (full-stack: backend + frontend) -->
+        <article class="card project-card" data-tags="python javascript web sql">
+          <div class="project-card__preview">
+            <i class="fas fa-burger"></i>
+            <div class="project-card__badges">
+              <span class="project-card__status">Finalizado</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3>Food Store — Pedidos de comida</h3>
+            <p>
+              Proyecto integrador full-stack de Programación 4: API REST + WebSocket para gestionar
+              pedidos en tiempo real, con pagos vía MercadoPago, subida de imágenes con Cloudinary
+              y panel de administración. Trabajo en equipo.
+            </p>
+            <ul class="stack-list">
+              <li>FastAPI</li><li>SQLModel</li><li>PostgreSQL</li><li>WebSocket</li><li>MercadoPago</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="https://drive.google.com/file/d/1DWTP74vqyrfRfR5ZMBRrjrr3XqI1ENmO/view" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+                <i class="fas fa-circle-play"></i> Video demo
+              </a>
+              <a href="https://github.com/Emape-g/Programacion-4-Back-End-Proyecto-Integrador" target="_blank" rel="noopener noreferrer" class="btn btn--repo">
+                <i class="fab fa-github"></i> Backend
+              </a>
+              <a href="https://github.com/Emape-g/Programacion4-Front-End-Proyecto-Integrador" target="_blank" rel="noopener noreferrer" class="btn btn--repo">
+                <i class="fab fa-github"></i> Frontend
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AlcaIdiomas -->
+        <article class="card project-card" data-tags="javascript web">
+          <div class="project-card__preview">
+            <i class="fas fa-language"></i>
+            <div class="project-card__badges">
+              <span class="project-card__status">Finalizado</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3>AlcaIdiomas</h3>
             <p>
               Landing page para una academia de idiomas con diseño responsive y navegación moderna.
               Incluye autenticación y almacenamiento seguro con Supabase.
@@ -99,11 +230,27 @@
             <ul class="stack-list">
               <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li>
             </ul>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Repo GitHub</a>
-          </article>
+            <div class="project-card__actions">
+              <a href="https://landing-ep.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+                <i class="fas fa-arrow-up-right-from-square"></i> Demo
+              </a>
+              <a href="https://github.com/Emape-g/Landingpage" target="_blank" rel="noopener noreferrer" class="btn btn--repo">
+                <i class="fab fa-github"></i> Repo
+              </a>
+            </div>
+          </div>
+        </article>
 
-          <article class="project-card card">
-            <h3>BASE DE DATOS BIBLIOTECA</h3>
+        <!-- Base de Datos Biblioteca -->
+        <article class="card project-card" data-tags="sql">
+          <div class="project-card__preview">
+            <i class="fas fa-book"></i>
+            <div class="project-card__badges">
+              <span class="project-card__status">Finalizado</span>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <h3>Base de Datos Biblioteca</h3>
             <p>
               Modelo relacional para administrar libros, autores, usuarios y préstamos.
               Permite registrar nuevas adquisiciones y gestionar devoluciones de forma organizada.
@@ -111,44 +258,54 @@
             <ul class="stack-list">
               <li>SQL</li><li>Diseño Relacional</li>
             </ul>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Repo GitHub</a>
-          </article>
-        </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/Emape-g/biblioteca.db.utn" target="_blank" rel="noopener noreferrer" class="btn btn--repo">
+                <i class="fab fa-github"></i> Repo
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
+
+      <p class="projects__empty" hidden>No hay proyectos con esa tecnología todavía.</p>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="contact section reveal">
-      <div class="container contact__wrapper">
-        <h2 class="section__title">CONTACTO</h2>
-        <div class="contact__card card">
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="section reveal">
+      <div class="section__header" style="text-align:center;">
+        <span class="section__eyebrow">Hablemos</span>
+        <h2 class="section__title">Contacto</h2>
+      </div>
+      <div class="contact__wrapper">
+        <div class="card contact__card">
           <form id="contact-form" class="contact__form" aria-label="Formulario de contacto">
-            <label for="name">Nombre:</label>
-            <input id="name" type="text" required />
-            <label for="email">Email:</label>
-            <input id="email" type="email" required />
-            <label for="message">Mensaje:</label>
-            <textarea id="message" rows="4" required></textarea>
-            <button type="submit" class="btn btn--primary">Enviar</button>
+            <label for="name">Nombre</label>
+            <input id="name" type="text" placeholder="Tu nombre" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+            <label for="message">Mensaje</label>
+            <textarea id="message" rows="4" placeholder="Contame en qué puedo ayudarte..." required></textarea>
+            <button type="submit" class="btn btn--primary">
+              <i class="fas fa-paper-plane"></i> Enviar mensaje
+            </button>
           </form>
           <p id="status-message" class="status-message"></p>
         </div>
 
         <div class="social-links">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </section>
   </main>
 
+  <footer class="footer">
+    <p>Diseñado y desarrollado por <b>Emanuel Perez</b> · 2026</p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
-
-
-
-
-
